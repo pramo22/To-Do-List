@@ -1,0 +1,29 @@
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+<style>
+    body{
+        background-color: #638C87;
+    }
+    .center-column{
+        width: 250px;
+        margin: 25px auto;
+        padding: 30px;
+        background-color: #fff;
+        box-shadow: 6px 2px 30px 0px rgba(0, 0, 0, 0.75);
+        border-radius: 3px;
+    }
+    .btn-danger{
+        background-color: #ffae19;
+        border-color: #e59400;
+    }
+
+</style>
+
+<div class="center-column">
+    <p>Are you sure you want to delete?</p>
+    <a class="btn btn-info" href="{% url 'index' %}">Cancel</a>
+    <form method="post" action="">
+        {% csrf_token %}
+        <input class="btn btn-danger" type="submit" name="Delete">
+    </form>
+</div>
